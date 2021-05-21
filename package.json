@@ -1,0 +1,48 @@
+{
+  "name": "@leetcode-hire/foundations-zh",
+  "version": "0.0.1",
+  "description": "Frontend foundation problem for leetcode-cn.com",
+  "main": "lib/cjs/index.js",
+  "module": "lib/es/index.js",
+  "repository": "https://github.com/LeetCode-OpenSource/hire",
+  "author": "yaosilve@qq.com",
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit":"lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "./src/**/*.{js,ts}": [
+      "prettier --write --ignore-unknown",
+      "npm run lint"
+    ]
+  },
+  "scripts": {
+    "build": "shx rm -rf lib && rollup --config",
+    "test": "jest",
+    "lint": "eslint --max-warnings 1 --fix --ext .js,.ts src"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "eslint": "^7.26.0",
+    "eslint-plugin-import": "^2.23.2",
+    "jest": "^26.6.3",
+    "lint-staged": "^11.0.0",
+    "prettier": "2.3.0",
+    "rollup": "^2.48.0",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "shx": "^0.3.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.6.2",
+    "husky": "^3.1.0"
+  },
+  "dependencies": {
+   
+  }
+}
